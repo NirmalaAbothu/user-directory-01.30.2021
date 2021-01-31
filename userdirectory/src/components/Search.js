@@ -9,18 +9,43 @@ const styles1 = {
           marginTop: "30px",
      },
 };
-function Search() {
+// function Search() {
+//      return (
+//           <form
+//                style={styles1.headerStyle}
+//                className="form-inline my-2 my-lg-0"
+//           >
+//                <input
+//                     className="form-control mr-sm-2"
+//                     type="search"
+//                     placeholder="Search"
+//                     aria-label="Search"
+//                />
+//           </form>
+//      );
+// }
+
+//
+
+function Search(props) {
      return (
           <form
                style={styles1.headerStyle}
                className="form-inline my-2 my-lg-0"
           >
-               <input
-                    className="form-control mr-sm-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-               />
+               <div className="form-group">
+                    <label htmlFor="search"></label>
+                    <input
+                         onChange={props.handleInputChange}
+                         value={props.value}
+                         name="search"
+                         type="text"
+                         className="form-control"
+                         placeholder="Search For a user"
+                         id="search"
+                    />
+                    <br />
+               </div>
           </form>
      );
 }

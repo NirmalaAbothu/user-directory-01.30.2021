@@ -59,13 +59,9 @@ class RandomUser extends Component {
 
      //    };
 
-     // handleInputChange = (event) => {
-     //      const value = event.target.value;
-     //      const name = event.target.name;
-     //      this.setState({
-     //           [name]: value,
-     //      });
-     // };
+     handleInputChange = (event) => {
+          this.setState({ search: event.target.value });
+     };
 
      // When the form is submitted, search the OMDB API for the value of `this.state.search`
      // handleFormSubmit = (event) => {
@@ -75,33 +71,42 @@ class RandomUser extends Component {
 
      render() {
           return (
-               <div style={styles2.headerStyle}>
-                    <table className="table">
-                         <thead>
-                              <tr>
-                                   <th scope="col">Image</th>
-                                   <th scope="col">Name</th>
-                                   <th scope="col">Phone</th>
-                                   <th scope="col">Email</th>
-                                   <th scope="col">DOB</th>
-                              </tr>
-                         </thead>
-                         <tbody>
-                              {[...this.state.users].map((item, index) => (
-                                   <TableRow
-                                        key={index}
-                                        picture={item.picture.medium}
-                                        firstName={item.name.first}
-                                        lastName={item.name.last}
-                                        phone={item.cell}
-                                        email={item.email}
-                                        dob={new Date(
-                                             Date.parse(item.dob.date)
-                                        ).toLocaleDateString()}
-                                   />
-                              ))}
-                         </tbody>
-                    </table>
+               <div>
+                    <div>
+                         <Search
+                              value={this.state.search}
+                              handleInputChange={this.handleInputChange}
+                         />
+                    </div>
+
+                    <div style={styles2.headerStyle}>
+                         <table className="table">
+                              <thead>
+                                   <tr>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">DOB</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                   {[...this.state.users].map((item, index) => (
+                                        <TableRow
+                                             key={index}
+                                             picture={item.picture.medium}
+                                             firstName={item.name.first}
+                                             lastName={item.name.last}
+                                             phone={item.cell}
+                                             email={item.email}
+                                             dob={new Date(
+                                                  Date.parse(item.dob.date)
+                                             ).toLocaleDateString()}
+                                        />
+                                   ))}
+                              </tbody>
+                         </table>
+                    </div>
                </div>
           );
      }
