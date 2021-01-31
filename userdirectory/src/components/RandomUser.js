@@ -61,6 +61,32 @@ class RandomUser extends Component {
 
      handleInputChange = (event) => {
           this.setState({ search: event.target.value });
+          this.SearchEmployee(this.state.search);
+     };
+
+     // SearchEmployee = (value) => {
+     //      const filteredList = this.state.users.sort((a, b) => {
+     //           return (
+     //                (a.name.first + a.name.last > b.name.first + b.name.last) *
+     //                     2 -
+     //                1
+     //           );
+     //      });
+
+     //      this.setState({ users: filteredList });
+
+     //      console.log(this.state.users);
+     // };
+
+     SearchEmployee = (value) => {
+          const filterdList = this.state.users.filter((user) => {
+               return (user.name.first + "" + user.name.last)
+                    .toLowerCase()
+                    .includes(value.toLowerCase());
+          });
+          this.setState({ users: filterdList });
+
+          console.log(this.state.users);
      };
 
      // When the form is submitted, search the OMDB API for the value of `this.state.search`
