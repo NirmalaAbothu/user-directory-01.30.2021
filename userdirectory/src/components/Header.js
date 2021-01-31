@@ -16,7 +16,10 @@ function Header() {
      return (
           <div style={styles.headerStyle} className="jumbotron">
                <h1 style={styles.headerStyle}>Employee Directory</h1>
-               <p style={styles.headerStyle}>Employee Search</p>
+               <p style={styles.headerStyle}>
+                    Click on carrots to filter by heading or use search box to
+                    narrow your result
+               </p>
           </div>
 
           // <div class="container">

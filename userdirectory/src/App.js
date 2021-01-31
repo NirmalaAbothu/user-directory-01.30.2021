@@ -1,15 +1,17 @@
-import React from "react";
-import Navbar from "./components/Header";
+import React, { Component } from "react";
+import Search from "./components/Search";
 
-import Card from "./components/Card";
+import Table from "./components/Table";
 import Header from "./components/Header";
+import RandomUser from "./components/RandomUser.js";
 
 function App() {
      return (
           <div className="container">
                <Header />
+               <Search />
 
-               <Card />
+               <RandomUser />
           </div>
      );
 }
