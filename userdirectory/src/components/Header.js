@@ -1,5 +1,6 @@
 import React from "react";
 
+// styles for Header component
 const styles = {
      headerStyle: {
           background: "black",
@@ -12,6 +13,8 @@ const styles = {
      },
 };
 
+// Header components function
+
 function Header() {
      return (
           <div style={styles.headerStyle} className="jumbotron">
@@ -21,12 +24,6 @@ function Header() {
                     box to narrow your result
                </p>
           </div>
-
-          // <div class="container">
-          //      <div class="page-header">
-          //           <h1>Example Page Header</h1>
-          //      </div>
-          // </div>
      );
 }
 

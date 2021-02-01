@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 
-import Header from "./Header";
 import Search from "./Search";
-import Table from "./Table";
 import API from "../utils/API";
 import TableRow from "./TableRow";
 
+// styles for table
 const styles2 = {
      headerStyle: {
           borderStyle: "ridge",
           marginTop: "30px",
      },
 };
+
+// class RandomUser which is extends Component
 
 class RandomUser extends Component {
      state = {
@@ -21,7 +22,7 @@ class RandomUser extends Component {
           sortOrder: "",
      };
 
-     // When this component mounts, search for the movie "The Matrix"
+     // When this component mounts, search for the random users"
 
      componentDidMount() {
           API.search()
@@ -30,6 +31,8 @@ class RandomUser extends Component {
                .catch((err) => console.log(err));
      }
 
+     // handleInputChange function to fiter the users
+
      handleInputChange = (e) => {
           this.setState({ search: e.target.value });
 
@@ -37,6 +40,7 @@ class RandomUser extends Component {
 
           this.SearchEmployee(e.target.value);
      };
+     //  SearchEmployee function to filter the uses thru the values enterd in search box
 
      SearchEmployee = (value) => {
           const search = value.toLowerCase();
@@ -46,13 +50,13 @@ class RandomUser extends Component {
                     user.name.last.toLowerCase().includes(search)
                );
           });
-          // console.log(filterdList);
+          console.log(filterdList);
           this.setState({ users: filterdList });
 
-          // console.log(this.state.users);
+          console.log(this.state.users);
      };
 
-     //Sorting by firstName in Name column
+     //Sorting by firstName thru Name column in header coulmn of the table
 
      sortByName = () => {
           const sortedList = this.state.users.sort(
@@ -68,6 +72,9 @@ class RandomUser extends Component {
           }
           this.setState({ users: sortedList });
      };
+
+     // render the search box and table
+
      render() {
           return (
                <div>

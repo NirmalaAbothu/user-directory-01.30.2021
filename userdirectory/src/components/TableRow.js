@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
+// TableRow component to display row data in table
+
 function TableRow(props) {
-     // console.log(props);
      return (
           <tr>
                <td>
