@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 function TableRow(props) {
-     console.log(props);
+     // console.log(props);
      return (
           <tr>
                <td>

@@ -18,86 +18,25 @@ class RandomUser extends Component {
           users: [],
           result: {},
           search: "",
+          sortOrder: "",
      };
 
      // When this component mounts, search for the movie "The Matrix"
 
      componentDidMount() {
           API.search()
-               .then((res) =>
-                    // console.log(this.state.result);
-                    this.setState({ users: res.data.results })
-               )
+               .then((res) => this.setState({ users: res.data.results }))
 
                .catch((err) => console.log(err));
-          // console.log(users);
-          // console.log(this.state.users);
      }
-
-     // searchRandomUsers() {
-     //      API.search().then((res) => {
-     //           // console.log(this.state.result);
-     //           this.setState({ result: res.data.results });
-
-     //           // .catch((err) => console.log(err));
-     //      });
-     // .catch((err) => console.log(err));
-     // }
-
-     // componentDidMount() {
-     //      API.Search().then((res) => {
-     //           this.setState({ Userss: res.data.Userss });
-     //           console.log(this.state.Userss).catch((err) => console.log(err));
-     //      });
-     // }
-
-     // searchRandomUsers = () => {
-     //      API.search()
-     //        .then(res => this.setState({ Users: res.data.Userss }))
-     //        console.log(this.state.Userss);
-     //        .catch(err => console.log(err));
-
-     //    };
-     // handleSearchChange = (e) => {
-     //      this.setState({ search: e.target.value });
-     // };
-
-     // handleInputChange = (e) => {
-     //      this.setState({ search: e.target.value });
-     //      this.SearchEmployee(this.state.search);
-     //      console.log(this.state.search);
-     // };
 
      handleInputChange = (e) => {
           this.setState({ search: e.target.value });
-          console.log(this.search);
+
           console.log(e.target.value);
-          // this.SearchEmployee(this.state.search);
-          this.SearchEmployee(e.target.value); // bind this here
+
+          this.SearchEmployee(e.target.value);
      };
-     // SearchEmployee = (value) => {
-     //      const filteredList = this.state.users.sort((a, b) => {
-     //           return (
-     //                (a.name.first + a.name.last > b.name.first + b.name.last) *
-     //                     2 -
-     //                1
-     //           );
-     //      });
-
-     //      this.setState({ users: filteredList });
-
-     //      console.log(this.state.users);
-     // };
-
-     // filteredUsers() {
-     //      const search = this.state.search.toLowerCase();
-     //      return this.state.users.filter((user) => {
-     //           return (
-     //                user.first.toLowerCase().includes(search) ||
-     //                user.last.toLowerCase().includes(search)
-     //           );
-     //      });
-     // }
 
      SearchEmployee = (value) => {
           const search = value.toLowerCase();
@@ -107,42 +46,37 @@ class RandomUser extends Component {
                     user.name.last.toLowerCase().includes(search)
                );
           });
-          console.log(filterdList);
+          // console.log(filterdList);
           this.setState({ users: filterdList });
 
-          console.log(this.state.users);
+          // console.log(this.state.users);
      };
 
-     // SearchEmployee = (value) => {
-     //      const filterdList = this.state.users.filter((user) => {
-     //           return (user.name.first + "" + user.name.last)
-     //                .toLowerCase()
-     //                .includes(value.toLowerCase());
-     //      });
-     //      this.setState({ users: filterdList });
+     //Sorting by firstName in Name column
 
-     //      console.log(this.state.users);
-     // };
-
-     // When the form is submitted, search the OMDB API for the value of `this.state.search`
-     // handleFormSubmit = (event) => {
-     //      event.preventDefault();
-     //      this.searchMovies(this.state.search);
-     // };
-
+     sortByName = () => {
+          const sortedList = this.state.users.sort(
+               (a, b) => (a.name.first > b.name.first) * 2 - 1
+          );
+          console.log(sortedList);
+          if (this.state.sortOrder === "down") {
+               sortedList.reverse();
+               console.log(sortedList);
+               this.setState({ sortOrder: "up" });
+          } else {
+               this.setState({ sortOrder: "down" });
+          }
+          this.setState({ users: sortedList });
+     };
      render() {
           return (
                <div>
                     <div>
                          <Search
                               value={this.state.search}
-                              // handleInputChange={this.handleInputChange}
-
                               handleInputChange={this.handleInputChange.bind(
                                    this
                               )}
-                              // handleInputChange={this.handleInputChange}
-                              // this.handleInputChange.bind(this)
                          />
                     </div>
 
@@ -151,7 +85,14 @@ class RandomUser extends Component {
                               <thead>
                                    <tr>
                                         <th scope="col">Image</th>
-                                        <th scope="col">Name</th>
+                                        <th
+                                             scope="col"
+                                             onClick={() => {
+                                                  this.sortByName();
+                                             }}
+                                        >
+                                             Name
+                                        </th>
                                         <th scope="col">Phone</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">DOB</th>
