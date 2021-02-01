@@ -58,10 +58,14 @@ class RandomUser extends Component {
      //        .catch(err => console.log(err));
 
      //    };
+     handleSearchChange = (e) => {
+          this.setState({ search: e.target.value });
+     };
 
-     handleInputChange = (event) => {
-          this.setState({ search: event.target.value });
+     handleInputChange = (e) => {
+          this.setState({ search: e.target.value });
           this.SearchEmployee(this.state.search);
+          console.log(this.state.search);
      };
 
      // SearchEmployee = (value) => {
@@ -78,16 +82,39 @@ class RandomUser extends Component {
      //      console.log(this.state.users);
      // };
 
+     // filteredUsers() {
+     //      const search = this.state.search.toLowerCase();
+     //      return this.state.users.filter((user) => {
+     //           return (
+     //                user.first.toLowerCase().includes(search) ||
+     //                user.last.toLowerCase().includes(search)
+     //           );
+     //      });
+     // }
+
      SearchEmployee = (value) => {
+          const search = value.toLowerCase();
           const filterdList = this.state.users.filter((user) => {
-               return (user.name.first + "" + user.name.last)
-                    .toLowerCase()
-                    .includes(value.toLowerCase());
+               return (
+                    user.name.first.toLowerCase().includes(search) ||
+                    user.name.last.toLowerCase().includes(search)
+               );
           });
           this.setState({ users: filterdList });
 
           console.log(this.state.users);
      };
+
+     // SearchEmployee = (value) => {
+     //      const filterdList = this.state.users.filter((user) => {
+     //           return (user.name.first + "" + user.name.last)
+     //                .toLowerCase()
+     //                .includes(value.toLowerCase());
+     //      });
+     //      this.setState({ users: filterdList });
+
+     //      console.log(this.state.users);
+     // };
 
      // When the form is submitted, search the OMDB API for the value of `this.state.search`
      // handleFormSubmit = (event) => {
