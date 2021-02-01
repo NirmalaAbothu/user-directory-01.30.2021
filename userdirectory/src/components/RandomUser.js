@@ -58,16 +58,23 @@ class RandomUser extends Component {
      //        .catch(err => console.log(err));
 
      //    };
-     handleSearchChange = (e) => {
-          this.setState({ search: e.target.value });
-     };
+     // handleSearchChange = (e) => {
+     //      this.setState({ search: e.target.value });
+     // };
+
+     // handleInputChange = (e) => {
+     //      this.setState({ search: e.target.value });
+     //      this.SearchEmployee(this.state.search);
+     //      console.log(this.state.search);
+     // };
 
      handleInputChange = (e) => {
           this.setState({ search: e.target.value });
-          this.SearchEmployee(this.state.search);
-          console.log(this.state.search);
+          console.log(this.search);
+          console.log(e.target.value);
+          // this.SearchEmployee(this.state.search);
+          this.SearchEmployee(e.target.value); // bind this here
      };
-
      // SearchEmployee = (value) => {
      //      const filteredList = this.state.users.sort((a, b) => {
      //           return (
@@ -100,6 +107,7 @@ class RandomUser extends Component {
                     user.name.last.toLowerCase().includes(search)
                );
           });
+          console.log(filterdList);
           this.setState({ users: filterdList });
 
           console.log(this.state.users);
@@ -128,7 +136,13 @@ class RandomUser extends Component {
                     <div>
                          <Search
                               value={this.state.search}
-                              handleInputChange={this.handleInputChange}
+                              // handleInputChange={this.handleInputChange}
+
+                              handleInputChange={this.handleInputChange.bind(
+                                   this
+                              )}
+                              // handleInputChange={this.handleInputChange}
+                              // this.handleInputChange.bind(this)
                          />
                     </div>
 
