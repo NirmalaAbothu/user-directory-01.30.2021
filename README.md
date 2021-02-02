@@ -28,17 +28,16 @@
 -    The user should be able to:
 
 
-    * Sort the table by Name column category in header row of table(Click on a  Name column category to sort by that column in ascending or descending order.
+    * Sort the table by Name column category in header row of table(Click on a  Name column category
+     to sort by that column in ascending or descending order.
 
-    * Enter a search in the search box to query of the  Name column(Filter the users by at first and last name property)
+    * Enter a search in the search box to query of the  Name column(Filter the users by at first
+     and last name property)
 
 -    When we enter character or characters in search box,then the user's list will be displayed who has
--    the same charcter or charactes in their first and last name.
+     the same charcter or charactes in their first and last name.
 
 -    Filter the users using user's firstname and last name.
-
--    When we enter character or characters in search box,then the user's list will be displayed who has
--    the same charcter or charactes in their first and last name.
 
 -    Sort the users using coulmn name "Name" in table header row.
 
