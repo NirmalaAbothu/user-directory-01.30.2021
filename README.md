@@ -13,26 +13,24 @@
 ![alt text](/public/Images/image4.PNG)
 ![alt text](/public/Images/image5.PNG)
 ![alt text](/public/Images/image6.PNG)
-![alt text](/(public/Images/image7.PNG)
 
 -    User able to view entire employee directory at once so that have quick access to their information.
 
 -    When user open this app can able to see randome users table with the following information in UI.
-     -- user's Image
-     -- Name
-     -- E-mail
-     -- Phone
-     -- DOB
+
+
+    * user's Image
+    * Name
+    * E-mail
+    * Phone
+    * DOB
 
 -    The user should be able to:
 
 
     * Sort the table by Name column category in header row of table(Click on a  Name column category to sort by that column in ascending or descending order.
 
-
     * Enter a search in the search box to query of the  Name column(Filter the users by at first and last name property)
-
-License
 
 -    When we enter character or characters in search box,then the user's list will be displayed who has
 -    the same charcter or charactes in their first and last name.
@@ -93,4 +91,4 @@ following commands
 
 Copyright © 2020 Nirmala Abothu
 
-[Deployed Heroku Link](https://serene-headland-27463.herokuapp.com/)
+[Deployed Github Link](https://nirmalaabothu.github.io/user-directory-01.30.2021/)
