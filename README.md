@@ -29,31 +29,28 @@
 
 
     * Sort the table by Name column category in header row of table(Click on a  Name column category
-     to sort by that column in ascending or descending order.
+     to sort by that column in ascending or descending order).
 
-    * Enter a search in the search box to query of the  Name column(Filter the users by at first
+    * Enter a search in the search box to query of the  Name column(Filter the users using first
      and last name property)
 
--    When we enter character or characters in search box,then the user's list will be displayed who has
-     the same charcter or charactes in their first and last name.
+-    Filter the user's list using user's firstname and last name.
 
--    Filter the users using user's firstname and last name.
-
--    Sort the users using coulmn name "Name" in table header row.
+-    Sort the user's list using coulmn name "Name" in table header row.
 
 ## Implemented the following functionalities
 
 ### Get the Random User's List:
 
 -    To get the random users using API("https://randomuser.me/api/?results=200") and display information as a table
-     including user's Image,Name,E-mail,Phone and DOB in UI.
+     in UI.
 
-### Filterted the User's List using user's first and last name
+### Filterted the User's List with onChange event and Javascript filter method.
 
 -    When we enter character or characters in search box,then the user's list will be displayed who has
-     the same charcter or charactes in their first and last name.
+     the same charcter or charactes in user's first and last name.
 
-### Sort the user(ascending/descending) by clicking Name column in header row.
+### Sort the user's list(ascending/descending) with JavaScript sort method.
 
 ## Built With
 
