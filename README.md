@@ -4,16 +4,16 @@
 
 ---
 
-![alt text](userdirectory/public/Images/image1.PNG)
+![alt text](/public/Images/image1.PNG)
 
-![alt text](userdirectory/public/Images/image2.PNG)
+![alt text](/public/Images/image2.PNG)
 
-![alt text](userdirectory/public/Images/image3.PNG)
+![alt text](/public/Images/image3.PNG)
 
-![alt text](userdirectory/public/Images/image4.PNG)
-![alt text](userdirectory/public/Images/image5.PNG)
-![alt text](userdirectory/public/Images/image6.PNG)
-![alt text](userdirectory/(public/Images/image7.PNG)
+![alt text](/public/Images/image4.PNG)
+![alt text](/public/Images/image5.PNG)
+![alt text](/public/Images/image6.PNG)
+![alt text](/(public/Images/image7.PNG)
 
 -    User able to view entire employee directory at once so that have quick access to their information.
 
